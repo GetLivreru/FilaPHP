@@ -17,6 +17,22 @@
                         </a>
                     </div>
                 </div>
+
+                <div class="flex items-center space-x-4">
+                    @auth
+                        <span class="text-gray-600">{{ auth()->user()->name }}</span>
+                        @if(auth()->user()->isAdmin())
+                            <a href="/admin" class="text-blue-600 hover:text-blue-700">Админ панель</a>
+                        @endif
+                        <form action="{{ route('logout') }}" method="POST" class="inline">
+                            @csrf
+                            <button type="submit" class="text-red-600 hover:text-red-700">Выйти</button>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" class="text-blue-600 hover:text-blue-700">Войти</a>
+                        <a href="{{ route('register') }}" class="text-blue-600 hover:text-blue-700">Регистрация</a>
+                    @endauth
+                </div>
             </div>
         </div>
     </nav>

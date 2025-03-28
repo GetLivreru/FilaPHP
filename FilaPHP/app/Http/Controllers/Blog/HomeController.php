@@ -13,6 +13,8 @@ class HomeController extends Controller
     {
         $posts = Post::with(['category', 'tags'])
             ->where('is_published', true)
+            ->whereNotNull('published_at')
+            ->where('published_at', '<=', now())
             ->orderBy('published_at', 'desc')
             ->paginate(10);
 

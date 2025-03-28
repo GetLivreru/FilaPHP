@@ -128,6 +128,32 @@
       <path value="$PROJECT_DIR$/FilaPHP/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/FilaPHP/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/FilaPHP/vendor/composer" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/danharrin/date-format-converter" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/danharrin/livewire-rate-limiting" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/ryangjchandler/blade-capture-directive" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/filament/infolists" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/filament/forms" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/filament/filament" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/filament/actions" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/filament/widgets" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/filament/tables" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/filament/support" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/filament/notifications" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/kirschbaum-development/eloquent-power-joins" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/openspout/openspout" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/spatie/color" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/spatie/laravel-package-tools" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/spatie/invade" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/blade-ui-kit/blade-icons" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/blade-ui-kit/blade-heroicons" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/symfony/html-sanitizer" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/league/csv" />
+      <path value="$PROJECT_DIR$/FilaPHP/vendor/anourvalar/eloquent-serialize" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

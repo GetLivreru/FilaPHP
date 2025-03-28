@@ -119,6 +119,32 @@
       <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/anourvalar/eloquent-serialize" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/blade-ui-kit/blade-heroicons" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/blade-ui-kit/blade-icons" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/danharrin/date-format-converter" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/danharrin/livewire-rate-limiting" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/filament/actions" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/filament/filament" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/filament/forms" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/filament/infolists" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/filament/notifications" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/filament/support" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/filament/tables" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/filament/widgets" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/kirschbaum-development/eloquent-power-joins" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/league/csv" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/livewire/livewire" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/masterminds/html5" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/openspout/openspout" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/ryangjchandler/blade-capture-directive" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/spatie/color" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/spatie/invade" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/spatie/laravel-package-tools" />
+      <excludeFolder url="file://$MODULE_DIR$/FilaPHP/vendor/symfony/html-sanitizer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -24,7 +24,7 @@
                         </div>
 
                         <h2 class="text-xl font-semibold mb-2">
-                            <a href="{{ route('post.show', $post->slug) }}" class="text-gray-800 hover:text-blue-600">
+                            <a href="{{ route('posts.show', $post->slug) }}" class="text-gray-800 hover:text-blue-600">
                                 {{ $post->title }}
                             </a>
                         </h2>

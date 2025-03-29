@@ -10,19 +10,18 @@ class Comment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'email',
         'content',
-        'is_approved',
+        'user_id',
         'post_id',
-    ];
-
-    protected $casts = [
-        'is_approved' => 'boolean',
     ];
 
     public function post()
     {
         return $this->belongsTo(Post::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

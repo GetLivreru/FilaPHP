@@ -25,8 +25,9 @@
                             <a href="/admin" class="text-blue-600 hover:text-blue-700">Админ панель</a>
                         @endif
                         <form action="{{ route('logout') }}" method="POST" class="inline">
+                            
                             @csrf
-                            <button type="submit" class="text-red-600 hover:text-red-700">Выйти</button>
+                            <button type="submit" class="text-red-600 hover:text-red-700 cursor-pointer">Выйти</button>
                         </form>
                     @else
                         <a href="{{ route('login') }}" class="text-blue-600 hover:text-blue-700">Войти</a>

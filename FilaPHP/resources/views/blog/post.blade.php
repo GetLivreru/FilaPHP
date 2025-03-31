@@ -20,7 +20,7 @@
             <span class="mx-2">•</span>
             <span id="likes-count">{{ $post->likes->count() }}</span> лайков
             @auth
-                <form action="{{ route('posts.like', $post) }}" method="POST" class="inline">
+                <form action="{{ route('posts.like', $post) }}" method="POST" class="inline" id="like-form-{{ $post->id }}">
                     @csrf
                     <button type="submit" class="ml-2 text-red-500 hover:text-red-700">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -105,22 +105,29 @@
 
 @push('scripts')
 <script>
-function likePost() {
-    fetch('{{ route('posts.like', $post) }}', {
-        method: 'POST',
-        headers: {
-            'X-CSRF-TOKEN': '{{ csrf_token() }}',
-            'Accept': 'application/json',
-        },
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.likes) {
-            document.getElementById('likes-count').textContent = data.likes;
-        }
-    })
-    .catch(error => console.error('Error:', error));
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const likeForm = document.getElementById('like-form-{{ $post->id }}');
+    if (likeForm) {
+        likeForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            fetch(this.action, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Accept': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.likes !== undefined) {
+                    document.getElementById('likes-count').textContent = data.likes;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    }
+});
 </script>
 @endpush
 @endsection 

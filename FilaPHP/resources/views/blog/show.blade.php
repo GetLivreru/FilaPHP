@@ -15,13 +15,13 @@
 
                     <div class="flex items-center justify-between mb-8">
                         <div class="flex items-center space-x-4">
-                            <form action="{{ route('posts.like', $post) }}" method="POST" class="inline">
+                            <form action="{{ route('posts.like', $post) }}" method="POST" class="inline" id="like-form-{{ $post->id }}">
                                 @csrf
                                 <button type="submit" class="flex items-center space-x-1 {{ $post->isLikedBy(auth()->user()) ? 'text-red-500' : 'text-gray-500' }}">
                                     <svg class="w-6 h-6" fill="{{ $post->isLikedBy(auth()->user()) ? 'currentColor' : 'none' }}" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
-                                    <span>{{ $post->likes->count() }}</span>
+                                    <span id="likes-count-{{ $post->id }}">{{ $post->likes->count() }}</span>
                                 </button>
                             </form>
                         </div>
@@ -79,4 +79,32 @@
             </div>
         </div>
     </div>
-</x-app-layout> 
+</x-app-layout>
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const likeForm = document.getElementById('like-form-{{ $post->id }}');
+    if (likeForm) {
+        likeForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            fetch(this.action, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Accept': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.likes !== undefined) {
+                    document.getElementById('likes-count-{{ $post->id }}').textContent = data.likes;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    }
+});
+</script>
+@endpush 

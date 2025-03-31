@@ -29,8 +29,9 @@ class RegisterController extends Controller
             'is_admin' => false,
         ]);
 
+        $user->sendEmailVerificationNotification();
         auth()->login($user);
 
-        return redirect()->route('home')->with('success', 'Регистрация успешна!');
+        return redirect()->route('verification.notice');
     }
 }

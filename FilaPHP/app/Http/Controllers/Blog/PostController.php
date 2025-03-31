@@ -13,7 +13,7 @@ class PostController extends Controller
     public function show($slug)
     {
         $post = Post::with(['category', 'tags', 'comments' => function($query) {
-            $query->where('is_approved', true)->orderBy('created_at', 'desc');
+            $query->orderBy('created_at', 'desc');
         }])->where('slug', $slug)->firstOrFail();
 
         return view('blog.post', compact('post'));
@@ -22,14 +22,15 @@ class PostController extends Controller
     public function comment(Request $request, Post $post)
     {
         $validated = $request->validate([
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255',
-            'content' => 'required|min:10',
+            'content' => 'required|min:1|max:1000',
         ]);
 
-        $post->comments()->create($validated);
+        $post->comments()->create([
+            'user_id' => auth()->id(),
+            'content' => $validated['content']
+        ]);
 
-        return back()->with('success', 'Комментарий успешно добавлен и будет опубликован после проверки.');
+        return back()->with('success', 'Комментарий успешно добавлен.');
     }
 
     public function like(Request $request, Post $post)

@@ -8,14 +8,14 @@
         <!-- Основная колонка с постами -->
         <div class="md:col-span-3">
             <h1 class="text-3xl font-bold mb-6">Последние записи</h1>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($posts as $post)
                 <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                     @if($post->featured_image)
                     <img src="{{ asset('storage/' . $post->featured_image) }}" alt="{{ $post->title }}" class="w-full h-48 object-cover">
                     @endif
-                    
+
                     <div class="p-4">
                         <div class="flex items-center text-gray-500 text-sm mb-2">
                             <span>{{ $post->published_at->format('d.m.Y') }}</span>
@@ -28,7 +28,7 @@
                                 {{ $post->title }}
                             </a>
                         </h2>
-                        
+
                         <div class="prose prose-sm max-w-none mb-4 text-gray-600">
                             {{ Str::limit(strip_tags($post->content), 150) }}
                         </div>
@@ -100,4 +100,4 @@
         </div>
     </div>
 </div>
-@endsection 
+@endsection

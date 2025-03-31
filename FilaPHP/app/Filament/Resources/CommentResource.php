@@ -24,21 +24,15 @@ class CommentResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('email')
-                    ->email()
-                    ->required()
-                    ->maxLength(255),
                 Forms\Components\Textarea::make('content')
                     ->required()
                     ->maxLength(65535)
                     ->columnSpanFull(),
-                Forms\Components\Toggle::make('is_approved')
-                    ->label('Одобрено'),
                 Forms\Components\Select::make('post_id')
                     ->relationship('post', 'title')
+                    ->required(),
+                Forms\Components\Select::make('user_id')
+                    ->relationship('user', 'name')
                     ->required(),
             ]);
     }
@@ -47,14 +41,13 @@ class CommentResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('email')
+                Tables\Columns\TextColumn::make('user.name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('post.title')
                     ->searchable(),
-                Tables\Columns\IconColumn::make('is_approved')
-                    ->boolean(),
+                Tables\Columns\TextColumn::make('content')
+                    ->searchable()
+                    ->limit(50),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

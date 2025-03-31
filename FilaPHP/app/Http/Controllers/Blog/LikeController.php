@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class LikeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function toggle(Post $post)
     {
         $like = $post->likes()->where('user_id', auth()->id())->first();
@@ -16,7 +21,9 @@ class LikeController extends Controller
             $like->delete();
             $likes = $post->likes()->count();
         } else {
-            $post->likes()->create(['user_id' => auth()->id()]);
+            $post->likes()->create([
+                'user_id' => auth()->id()
+            ]);
             $likes = $post->likes()->count();
         }
 

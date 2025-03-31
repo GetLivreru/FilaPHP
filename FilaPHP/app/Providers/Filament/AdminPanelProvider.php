@@ -50,10 +50,18 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-                \App\Http\Middleware\AdminMiddleware::class,
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->brandName('Админ панель')
+            ->favicon(asset('images/favicon.ico'))
+            ->topNavigation()
+            ->globalSearchKeyBindings(['command+k', 'ctrl+k'])
+            ->sidebarCollapsibleOnDesktop()
+            ->renderHook(
+                'panels::topbar.end',
+                fn (): string => view('filament.components.home-button')->render()
+            );
     }
 }

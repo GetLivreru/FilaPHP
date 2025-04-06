@@ -12,6 +12,11 @@ use App\Http\Controllers\Blog\CommentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Requests\EmailVerificationRequest;
 use Illuminate\Http\Request;
+use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\TestController;
+
+// Маршрут для локализации должен быть первым
+Route::get('/locale/{lang}', [LocaleController::class, 'setLocale']);
 
 // Публичные маршруты
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -64,4 +69,4 @@ Route::get('/email/verify/{id}/{hash}', function (App\Http\Requests\EmailVerific
 Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
     return back()->with('status', 'verification-link-sent');
-})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send'); 

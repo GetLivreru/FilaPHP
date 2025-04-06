@@ -1,0 +1,11 @@
+<?php
+return [
+    "Login" => "Login",
+    "Email" => "Email",
+    "Password" => "Password",
+    "Remember me" => "Remember me",
+    "Log in" => "Log in",
+    "Don't have an account?" => "Don't have an account?",
+    "Register" => "Register"
+];
+?>

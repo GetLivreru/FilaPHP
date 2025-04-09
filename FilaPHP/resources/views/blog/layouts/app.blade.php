@@ -51,6 +51,7 @@
                     </div>
 
                     @auth
+                        <a href="{{ route('profile.edit') }}" class="text-blue-600 hover:text-blue-700">@lang('Profile')</a>
                         <span class="text-gray-600">{{ auth()->user()->name }}</span>
                         @if(auth()->user()->isAdmin())
                             <a href="/admin" class="text-blue-600 hover:text-blue-700">Админ панель</a>

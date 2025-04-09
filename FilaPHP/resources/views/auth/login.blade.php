@@ -8,9 +8,6 @@
  
 
     <div class="py-1" role="none">
-            <a href="/locale/en" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🇺🇸 English</a>
-            <a href="/locale/ru" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🇷🇺 Русский</a>
-            <a href="/locale/kk" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🇰🇿 Қазақша</a>
         </div>
 
         <h2 class="text-2xl font-bold mb-6">@lang('Login')</h2>
